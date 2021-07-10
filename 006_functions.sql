@@ -94,3 +94,20 @@ SELECT * FROM ROWCTE ;
 -- EOF Recursive CTE
 
 
+
+
+-- string to column
+declare @str varchar(500) = 'one,two,three' ;
+select * from string_split(@str, ',') ;
+-- EOF string to column
+
+
+
+
+-- column to string
+declare @tble_01 table ( col_01 varchar(500))
+insert into @tble_01 values ('one'), ('two'), ('three') ;
+select string_agg(col_01, ',') as col_tostr  from @tble_01 ;
+-- EOF column to string
+
+
