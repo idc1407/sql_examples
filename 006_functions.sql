@@ -1,7 +1,9 @@
 -- avg
 select 
 prod_id,
-round(avg(sale_rate),0) avgPrice from sales group by prod_id  ;
+round(avg(sale_rate),0) avgPrice from sales 
+where cust_id between 1 and 2 and sale_date between '2020-01-01' and '2020-03-31'
+group by prod_id order by prod_id ;
 -- EOF avg
 
 
