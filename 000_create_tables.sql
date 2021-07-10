@@ -388,9 +388,6 @@ end
 
 
 
-select * from sales 
-
-
 
 
 
