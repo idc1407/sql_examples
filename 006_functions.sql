@@ -17,7 +17,6 @@ with cte_01 as
 	from sales 
 	where sale_date between '2020-03-01' and '2021-07-31' 
 	group by cust_id, prod_id  
-	
 )
 select 
 a.cust_id,
@@ -43,7 +42,6 @@ cte_01 as
 	from sales 
 	where sale_date between '2020-03-01' and '2021-07-31' 
 	group by cust_id, prod_id  
-	
 ),
 cte_02 as 
 (
@@ -79,16 +77,15 @@ inner join products c on a.prod_id = c.prod_id order by TotalSales, cust_id, pro
 
 
 
-
 -- Recursive CTE
-Declare @RowNo int =1;
+Declare @dates date  = '2020-01-01';
 with ROWCTE as  
 (  
-    SELECT @RowNo as ROWNO    
+    SELECT @dates as cdate    
  	UNION ALL  
-    SELECT  ROWNO + 1  
+    SELECT  DATEADD(day, 1, cdate)
 	FROM  ROWCTE  
-	WHERE RowNo < 10
+	WHERE cdate <= '2020-03-31' 
 )  
 SELECT * FROM ROWCTE ; 
 -- EOF Recursive CTE
@@ -100,7 +97,6 @@ SELECT * FROM ROWCTE ;
 declare @str varchar(500) = 'one,two,three' ;
 select * from string_split(@str, ',') ;
 -- EOF string to column
-
 
 
 

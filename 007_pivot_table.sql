@@ -13,6 +13,7 @@ INSERT INTO @Grades VALUES
 ('Amilee','Science',90),
 ('Amilee','Geography',100) ;
 
+select * from @Grades ;
 
 SELECT * FROM (
   SELECT

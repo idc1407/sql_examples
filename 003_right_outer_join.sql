@@ -26,7 +26,7 @@ a.mth,
 a.yy,
 a.net_salary 
 from @emp_trn a
-right outer join @emp_mst b on a.emp_id = b.emp_id ;
+right join @emp_mst b on a.emp_id = b.emp_id ;
 
 
 

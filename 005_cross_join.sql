@@ -20,8 +20,9 @@ INSERT INTO @dates
 SELECT * FROM ROWCTE ; 
 -- EOF Recursive CTE
 
+--select * from @employee ;
 
-
+--select * from @dates ;
 
 
 SELECT * FROM @employee
